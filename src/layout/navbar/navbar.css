@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0e0ec;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #4a4a8a; /* Darker shade for better contrast */
+    transition: color 0.3s;
+    &:hover {
+      color: #17177e; /* Darker on hover */
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s ease;
+      &:hover {
+        color: #4a4a8a; 
+         transition: transform 0.3s ease;
+        transform: translateY(-100px); /* Rise up on hover */
+      }
+    }
+  }
+}

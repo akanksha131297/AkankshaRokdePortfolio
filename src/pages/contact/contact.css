@@ -1,0 +1,153 @@
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.girl-and-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.girl-animation {
+ position: relative; /* important for absolute bubbles inside */
+  flex: 1 1 300px;
+  max-width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+
+.contact-container {
+  flex: 0 0 400px;
+  align-self: flex-start;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-left: auto; /* Pushes it to the extreme right */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none;
+  transition: border-color 0.3s ease;
+  
+}
+
+.contact-form button {
+  background-color: #4a4a8a;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #3d3d7a;
+}
+
+/* Extra Info Below */
+.contact-extra-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.large-icon {
+  font-size: 0.5rem;
+  color: #4a4a8a;
+}
+
+.info-title {
+  font-weight: bold;
+}
+
+.info-content {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.copyright-block {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1rem;
+  text-align: center;
+}
+.contact-title,
+.contact-subtitle,
+.contact-form input,
+.contact-form textarea {
+  color: #4a4a8a; /* or any dark color for readability */
+}
+.contact-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888; /* Lighter grey for placeholders */
+}
+.info-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* space between blocks */
+  margin-top: 2rem;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+.info-block {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  
+}
+
+.icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}

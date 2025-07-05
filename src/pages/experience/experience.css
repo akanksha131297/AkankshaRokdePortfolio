@@ -1,0 +1,128 @@
+.stepper-container {
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+.stepper-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;  /* Allow horizontal scroll if needed */
+  padding-bottom: 1rem; /* space for scrollbar */
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 180px; /* increased from 120px */
+  margin: 0 1.5rem;  /* slightly more margin */
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+  z-index: 1;
+}
+
+.circle.active {
+  background-color: #4a4a8a;
+  transform: scale(1.0);
+}
+
+.label {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.description {
+  background: #fff;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 200px;
+  font-size: 0.95rem;
+  color: #444;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+  max-width: 500px; 
+  
+}
+/* Connector line */
+.step-connector {
+  height: 4px;
+  width: 100px;
+  background-color: transparent;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.step-connector.visible {
+  background-color: #4a4a8a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.info-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-box {
+  background-color: #f0f0f5;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+}
+
+.short-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+.detail-card {
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.9rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  color: #444;
+  text-align: left;
+  max-width: 975px;   /* wider */
+  height: 380px;      /* fixed height */
+  overflow-y: auto;   /* enable vertical scroll if content exceeds */
+  word-wrap: break-word;
+}
+.step-item.active-glow {
+  box-shadow: 0 0 12px 3px rgba(74, 74, 138, 0.6);
+  border-radius: 10px;
+  transition: box-shadow 0.5s ease;
+}

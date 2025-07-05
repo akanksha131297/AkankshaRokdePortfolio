@@ -1,0 +1,37 @@
+  <div class="contact-page">
+    <div class="girl-and-form">
+      <app-girlanimation class="girl-animation"></app-girlanimation>
+
+      <div class="contact-container">
+        <h2 class="contact-title">I'd love to hear from you!</h2>
+        <p class="contact-subtitle">Whether it’s a project, feedback, or just a hello — drop me a message!</p>
+
+          <form class="contact-form" (ngSubmit)="sendEmail()">
+              <input type="text" [(ngModel)]="formData.name" name="name" placeholder="Your Name" required />
+              <input type="email" [(ngModel)]="formData.email" name="email" placeholder="Your Email" required />
+              <textarea [(ngModel)]="formData.message" name="message" rows="5" placeholder="Your Message" required></textarea>
+              <button type="submit">Send Message</button>
+          </form>
+
+      <div class="info-row">
+    <div class="info-block">
+      <div class="icon"><img src="assets/icons/location.svg" alt="Location" /></div>
+      <div class="info-title">Germany</div>
+    </div>
+
+    <div class="info-block">
+      <div class="icon"><img src="assets/icons/message.svg" alt="Email" /></div>
+      <div class="info-title">Email</div>
+    </div>
+
+    <div class="info-block">
+      <div class="icon"><img src="assets/icons/linkedin.svg" alt="LinkedIn" /></div>
+      <div class="info-title">LinkedIn</div>
+    </div>
+  </div>
+      <div class="copyright-block">
+        © 2025 Akanksha Rokde. All rights reserved.
+      </div>
+     </div>
+  </div>
+ </div>

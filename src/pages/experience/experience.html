@@ -1,0 +1,30 @@
+<div class="stepper-container">
+  <div class="stepper-wrapper">
+    <div class="stepper">
+      <ng-container *ngFor="let step of steps; let i = index">
+        <div class="step-item"  [class.active-glow]="step.active">
+          <div class="circle" [class.active]="step.active">{{ i + 1 }}</div>
+          <div class="label">{{ step.label }}</div>
+          <div class="description">
+            <div class="info-boxes">
+              <div class="info-box">{{ step.period }}</div>
+              <div class="info-box">{{ step.organization }}</div>
+            </div>
+            <div class="detail-card"  *ngIf="step.details?.length">
+              <ul>
+                <li *ngFor="let item of step.details">{{ item }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Render connector line only between steps -->
+        <div
+          *ngIf="i < steps.length - 1"
+          class="step-connector"
+          [class.visible]="steps[i + 1].active"
+        ></div>
+      </ng-container>
+    </div>
+  </div>
+</div>
