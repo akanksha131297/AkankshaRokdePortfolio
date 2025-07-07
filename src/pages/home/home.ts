@@ -31,6 +31,6 @@ export class Home {
       this.bubblesVisible = false;
        this.showDescription = false;
 
-    }, 5000);
+    }, 6000);
   }
 }

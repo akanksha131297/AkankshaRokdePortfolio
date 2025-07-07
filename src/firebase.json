@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/AkankshaRokde/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

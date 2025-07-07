@@ -5,9 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng run AkankshaRokde:server:production",
+  "build:client-and-server-bundles": "ng build --configuration production && ng run AkankshaRokde:server:production",
+  "prerender": "ng run AkankshaRokde:prerender",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:AkankshaRokde": "node dist/AkankshaRokde/server/server.mjs"
+    
   },
   "prettier": {
     "overrides": [

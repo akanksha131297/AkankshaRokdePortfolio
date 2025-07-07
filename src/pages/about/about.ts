@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Girlanimation } from '../../shared/girlanimation/girlanimation'; 
-
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Inject,
+  PLATFORM_ID
+} from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Girlanimation } from '../../shared/girlanimation/girlanimation';
 
 @Component({
   selector: 'app-about',
@@ -10,42 +15,50 @@ import { Girlanimation } from '../../shared/girlanimation/girlanimation';
   templateUrl: './about.html',
   styleUrl: './about.css'
 })
-export class About implements OnInit {
+export class About implements OnInit, OnDestroy {
   intervalId: any;
-  userClicked = false; 
+  userClicked = false;
   currentIndex = 0;
-  slideCount = 3; // number of slides (dots)
+  slideCount = 3;
   autoSlideInterval: any;
   bubblesVisible = false;
   private hideTimeout?: any;
-    ngOnInit() {
-          this.startAutoSlide();
-     }
-    
-startAutoSlide() {
-  this.intervalId = setInterval(() => {
-      if (!this.userClicked) {
-        this.currentIndex = (this.currentIndex + 1) % 3;
-      }
-    }, 5000);
-}
- onDotClick(index: number) {
-    this.currentIndex = index;
-    this.userClicked = true; // ✅ Stop further auto sliding
-    if (this.intervalId) clearInterval(this.intervalId); // Optional: fully stop the interval
+  isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
+  ngOnInit() {
+    if (this.isBrowser) {
+      this.startAutoSlide();
+    }
+  }
 
-ngOnDestroy() {
-  if (this.intervalId) clearInterval(this.intervalId);
-}
- onMouseMove(event: MouseEvent) {
-    this.bubblesVisible = true;
+  startAutoSlide() {
+    this.intervalId = setInterval(() => {
+      if (!this.userClicked) {
+        this.currentIndex = (this.currentIndex + 1) % this.slideCount;
+      }
+    }, 5000);
+  }
 
-    // Clear previous timeout if any
+  onDotClick(index: number) {
+    this.currentIndex = index;
+    this.userClicked = true;
+    if (this.intervalId) clearInterval(this.intervalId);
+  }
+
+  ngOnDestroy() {
+    if (this.intervalId) clearInterval(this.intervalId);
     if (this.hideTimeout) clearTimeout(this.hideTimeout);
+  }
 
-    // Hide bubbles after 3 seconds of no mouse move
+  onMouseMove(event: MouseEvent) {
+    if (!this.isBrowser) return;
+
+    this.bubblesVisible = true;
+    if (this.hideTimeout) clearTimeout(this.hideTimeout);
     this.hideTimeout = setTimeout(() => {
       this.bubblesVisible = false;
     }, 3000);

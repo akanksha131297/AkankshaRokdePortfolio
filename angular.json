@@ -10,6 +10,19 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+            "prerender": {
+              "builder": "@angular-devkit/build-angular:prerender",
+              "options": {
+                "browserTarget": "AkankshaRokde:build:production",
+                "serverTarget": "AkankshaRokde:server:production",
+                "routes": [
+                  "/",
+                  "/about",
+                  "/experience"
+                ]
+              }
+            },
+            
         "build": {
           "builder": "@angular/build:application",
           "options": {

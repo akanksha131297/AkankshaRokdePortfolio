@@ -84,7 +84,7 @@
 .about-card {
   flex: 1 1 350px;
   max-width: 500px;
-  height: 525px;
+  height: 600px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
@@ -94,6 +94,9 @@
   flex-direction: column;
   justify-content: flex-start; /* start pushing content from top */
   position: relative;
+  width: 100%;          /* take full width of container but max 500px */
+  height: auto;         /* height adjusts based on content */
+  min-height: 400px;   
 }
 
 .about-name h1 {
@@ -187,4 +190,59 @@
 .tech-capsules span:hover {
   background-color: #d6d6f5;
   transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .girl-left {
+    display: none;
+  }
+  
+  .about-container {
+   height: 50vh ;             /* full viewport height */
+    padding-top: 1rem;       /* smaller top padding */
+    padding-bottom: 5rem;    /* smaller bottom padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertically center content */
+    align-items: center;
+    gap: 0;
+  }
+
+  .about-card {
+    max-width: 90vw;
+    width: 100%;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  }
+
+  /* Smaller font sizes for mobile */
+  .about-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .about-card h3 {
+    font-size: 1rem;
+  }
+
+  .about-description {
+    font-size: 0.9rem;
+  }
+
+  .tech-capsules span {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  ul li {
+    font-size: 0.9rem;
+  }
+
+  /* Adjust dot sizes if needed */
+  .dot-container span {
+    width: 10px;
+    height: 10px;
+  }
+  .about-card p, .about-card ul, .about-card h1, .about-card h3 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
+}
 }

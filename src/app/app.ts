@@ -7,7 +7,7 @@ import { RouteAnimation } from '../shared/route-animation/route-animation';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Navbar, RouteAnimation, Footer],
+  imports: [ Navbar, RouteAnimation, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -38,3 +38,23 @@
 .footer-icon:hover img {
   filter: brightness(1.2);
 }
+ @media (max-width: 768px) {
+  .mini-side-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    width: 100%;
+    transform: none; /* Remove vertical centering */
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  }
+
+  .footer-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -45,10 +45,10 @@
   cursor: pointer;
 }
 
-.bubble.github    { top: 20%; right: 20%; }
-.bubble.linkedin  { top: 20%; right:40%; }
-.bubble.resume    { top: 40%; left: 80%; }
-.bubble.youtube   { top: 50%; right: 25%; }
+.bubble.github    { top: 10%; right: 20%; }
+.bubble.linkedin  { top: 25%; right:10%; }
+.bubble.resume    { top: 40%; left: 85%; }
+.bubble.youtube   { top: 20%; right: 15%; }
 .bubble.gmail     { top: 10%; right: 30%; }
 
 /* Optional: bubble hover effect */
@@ -80,4 +80,64 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+@media (max-width: 768px) {
+  .hero-container {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .bubbles-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 1rem;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .bubble {
+    position: static;
+    width: 40px;   /* Smaller size */
+    height: 40px;
+    margin: 0.3rem;
+  }
+
+  .bubble img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .lottie-animation {
+    width: 70vw;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+  }
+
+.brief-description {
+   position: absolute;
+  top: 15%; /* Adjust as needed */
+  left: 50%;
+  bottom: AUTO;
+  transform: translateX(-50%);
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  display: inline-block; /* Ensures it only takes space based on content */
+  white-space: normal;  
+   max-width: fit-content! important; /* Ensures it doesn't stretch too wide */
+}
 }
