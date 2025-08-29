@@ -1,14 +1,24 @@
-import { Routes } from '@angular/router';    
-import { Home } from '../pages/home/home';
-import { About } from '../pages/about/about';
-
-import { Experience } from '../pages/experience/experience';
-import { Contact } from '../pages/contact/contact';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', component: Home ,data: { animation: 'HomePage' }},
-  { path: 'about', component: About ,data: { animation: 'AboutPage' }},
-   { path: 'experience', component: Experience ,data: { animation: 'ExperiencePage' } },
-  { path: 'contact', component: Contact ,data: { animation: '/ContactPage' } },
-
+  {
+    path: '',
+    loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent),
+    data: { animation: 'HomePage' }
+  },
+  {
+    path: 'about',
+    loadComponent: () => import('./features/about/about.component').then(m => m.AboutComponent),
+    data: { animation: 'AboutPage' }
+  },
+  {
+    path: 'experience',
+    loadComponent: () => import('./features/experience/experience.component').then(m => m.ExperienceComponent),
+    data: { animation: 'ExperiencePage' }
+  },
+  {
+    path: 'contact',
+    loadComponent: () => import('./features/contact/contact.component').then(m => m.ContactComponent),
+    data: { animation: 'ContactPage' }
+  },
 ];
