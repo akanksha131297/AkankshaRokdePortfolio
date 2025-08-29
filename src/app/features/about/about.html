@@ -1,0 +1,103 @@
+<div class="about-container" (mousemove)="onMouseMove($event)">
+  <div class="girl-left">
+    <app-girlanimation></app-girlanimation>
+    <div
+      class="bubbles-container"
+      [style.opacity]="bubblesVisible ? 1 : 0"
+      [style.pointerEvents]="bubblesVisible ? 'auto' : 'none'"
+    >
+      <div class="bubble"><img src="assets/icons/agile.svg" alt="1" /></div>
+      <div class="bubble"><img src="assets/icons/angular.svg" alt="2" /></div>
+      <div class="bubble"><img src="assets/icons/azure.svg" alt="3" /></div>
+      <div class="bubble"><img src="assets/icons/bootstrap.svg" alt="4" /></div>
+      <div class="bubble"><img src="assets/icons/c.svg" alt="5" /></div>
+      <div class="bubble"><img src="assets/icons/css.svg" alt="6" /></div>
+      <div class="bubble"><img src="assets/icons/visual-studio-code.svg" alt="7" /></div>
+      <div class="bubble"><img src="assets/icons/microsoft-dot-net.svg" alt="8" /></div>
+      <div class="bubble"><img src="assets/icons/git.svg" alt="9" /></div>
+      <div class="bubble"><img src="assets/icons/html.svg" alt="10" /></div>
+      <div class="bubble"><img src="assets/icons/javascript.svg" alt="11" /></div>
+      <div class="bubble"><img src="assets/icons/visual.svg" alt="12" /></div>
+      <div class="bubble"><img src="assets/icons/sql.svg" alt="13" /></div>
+      <div class="bubble"><img src="assets/icons/ibm.svg" alt="14" /></div>
+      <div class="bubble"><img src="assets/icons/typescript.svg" alt="15" /></div>
+    </div>
+  </div>
+
+
+
+   <div class="about-card">
+    <div class="card-content">
+      <ng-container [ngSwitch]="currentIndex">
+        <div *ngSwitchCase="0">
+        
+    <div class="about-name">
+      <h1>Akanksha Rokde</h1>
+      <h3>Full Stack Developer | Azure AI Engineer | DevOps Enthusiast</h3>
+    </div>
+
+    <p class="about-description">
+      Versatile Full Stack Developer with 5+ years of experience in delivering high-quality,
+      scalable web applications using <b>Angular, .NET </b> and <b> ASP.NET MVC</b>. Skilled in
+      building responsive user interfaces and robust backend services. Certified <b>Azure AI
+      Engineer and DevOps</b> with hands-on experience in version control using <b>Git</b>. Adept
+      at managing end-to-end development lifecycles, collaborating across teams, and
+      contributing to enterprise solutions in logistics and healthcare.
+    </p>
+  
+        </div>
+        <div *ngSwitchCase="1">
+          <div class="about-name">
+          <h1>Technologies / Skills</h1>
+          </div>
+          <div class="tech-capsules">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>Angular</span>
+              <span>Bootstrap</span>
+              <span>TypeScript</span>
+              <span>C#</span>
+              <span>ASP.NET MVC</span>
+              <span>.NET</span>
+              <span>MySQL</span>
+              <span>DB2</span>
+              <span>Microsoft Azure</span>
+              <span>Azure DevOps</span>
+              <span>Azure Developer</span>
+              <span>Microsoft AI Engineer</span>
+              <span>WatsonX</span>
+              <span>Git</span>
+              <span>Visual Studio</span>
+              <span>Data Structures and algorithm</span>
+              <span>System Design</span>
+              <span>Agile</span>
+               <span>SOLID</span>
+           </div>
+        </div>
+        <div *ngSwitchCase="2">
+          <div class="about-name">
+          <h1>Certifications</h1>
+          </div>
+          <ul>
+            <li>Microsoft AZ-900: Azure Fundamentals</li>
+            <li>Microsoft AI-102: Azure AI Engineer Associate</li>
+            <li>Microsoft AI-900: Microsoft AI Fundamentals</li>
+            <li>Microsoft AZ-400: Azure DevOps Expert</li>
+            <li>IBM Generative AI Foundations Badge</li>
+            <li>IBM Watsonx Essentials Badge</li>
+            <li>IBM Travel and Transportation Badge</li>
+            <li>IBM Security and Privacy Badge</li>
+          </ul>
+        </div>
+      </ng-container>
+      <!-- Dots here -->
+  <div class="dot-container">
+    <span
+      *ngFor="let dot of [0, 1, 2]; let i = index"
+      [class.active]="i === currentIndex"
+      (click)="onDotClick(i)"
+    ></span>
+  </div>
+    </div>
+
