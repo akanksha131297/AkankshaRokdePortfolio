@@ -1,6 +1,6 @@
 .girl-container {
   width: 100%;
-  height: 100vh; /* full height of the viewport */
+  height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,9 +8,9 @@
 }
 
 .lottie-animation {
-  width: 60vw; /* increase this for bigger size, e.g. 60% of viewport width */
+  width: 60vw; 
   height: auto;
-  max-width: 700px; /* limit max size on very large screens if needed */
+  max-width: 700px; 
 }
 
 

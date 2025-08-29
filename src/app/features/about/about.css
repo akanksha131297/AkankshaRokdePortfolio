@@ -197,12 +197,12 @@
   }
   
   .about-container {
-   height: 50vh ;             /* full viewport height */
-    padding-top: 1rem;       /* smaller top padding */
-    padding-bottom: 5rem;    /* smaller bottom padding */
+   height: 50vh ;             
+    padding-top: 1rem;      
+    padding-bottom: 5rem;    
     display: flex;
     flex-direction: column;
-    justify-content: center;   /* vertically center content */
+    justify-content: center;   
     align-items: center;
     gap: 0;
   }
@@ -213,7 +213,6 @@
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
   }
 
-  /* Smaller font sizes for mobile */
   .about-card h1 {
     font-size: 1.5rem;
   }
@@ -235,7 +234,6 @@
     font-size: 0.9rem;
   }
 
-  /* Adjust dot sizes if needed */
   .dot-container span {
     width: 10px;
     height: 10px;

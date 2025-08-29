@@ -12,10 +12,10 @@
   .logo {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #4a4a8a; /* Darker shade for better contrast */
+    color: #4a4a8a; 
     transition: color 0.3s;
     &:hover {
-      color: #17177e; /* Darker on hover */
+      color: #17177e; 
     }
   }
 
@@ -32,7 +32,7 @@
       &:hover {
         color: #4a4a8a; 
          transition: transform 0.3s ease;
-        transform: translateY(-100px); /* Rise up on hover */
+        transform: translateY(-100px); 
       }
     }
   }

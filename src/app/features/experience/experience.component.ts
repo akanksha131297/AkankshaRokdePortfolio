@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, ChangeDetectionStrategy , ChangeDetectorRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -77,7 +77,8 @@ export class ExperienceComponent implements OnInit {
 
 	isBrowser = false;
 
-	constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+	constructor(@Inject(PLATFORM_ID) private platformId: Object,
+			private cdr: ChangeDetectorRef) {
 		this.isBrowser = isPlatformBrowser(platformId);
 	}
 
@@ -94,10 +95,11 @@ export class ExperienceComponent implements OnInit {
 			this.steps.forEach((step, index) => {
 				step.active = index === 0;
 			});
-
-			for (let i = 1; i < this.steps.length; i++) {
+			this.cdr.markForCheck();
+			for (let i = 1; i < this.steps.length; i++) { 		 	 	
 				setTimeout(() => {
 					this.steps[i].active = true;
+					this.cdr.markForCheck();
 				}, delay * i);
 			}
 

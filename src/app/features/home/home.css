@@ -125,7 +125,7 @@
 
 .brief-description {
    position: absolute;
-  top: 15%; /* Adjust as needed */
+  top: 15%; 
   left: 50%;
   bottom: AUTO;
   transform: translateX(-50%);
@@ -136,9 +136,9 @@
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 20;
-  display: inline-block; /* Ensures it only takes space based on content */
+  display: inline-block;
   white-space: normal;  
-   max-width: fit-content! important; /* Ensures it doesn't stretch too wide */
+   max-width: fit-content! important; 
 }
 }
 

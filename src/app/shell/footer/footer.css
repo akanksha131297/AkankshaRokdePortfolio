@@ -32,7 +32,6 @@
 .footer-icon img {
   width: 100%;
   height: 100;
-  /* Remove filter to keep original icon colors */
   filter: none;
 }
 .footer-icon:hover img {
@@ -45,7 +44,7 @@
     left: 0;
     top: auto;
     width: 100%;
-    transform: none; /* Remove vertical centering */
+    transform: none; 
     flex-direction: row;
     justify-content: space-around;
     padding: 0.5rem 1rem;
