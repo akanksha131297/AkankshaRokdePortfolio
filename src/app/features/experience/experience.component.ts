@@ -72,6 +72,22 @@ export class ExperienceComponent implements OnInit {
 				'Utilized a robust technology stack including Angular 16, C#, TypeScript, JavaScript, CSS, and development tools such as Visual Studio 2022 and Visual Studio Code.'
 			],
 			active: false
+		},
+		{
+			label: 'Software Developer II',
+			period: 'Jan 2026 – Present',
+			organization: 'Trimble Inc.',
+			role: 'Software Developer II',
+			location: 'Germany',
+			details: [
+				'Defined domain boundaries and system integration rules for geospatial track analysis software in alignment with senior architects.',
+				'Engineered core algorithms to align measured tracks against design tracks, recalculating spatial coordinates for new track stationing and updated chainage alignment.',
+				'Developed railway quality reporting modules for Travel Chord, Relative Travel Chord, and D1/D2 reports (Deutsche Bahn and global standards).',
+				'Designed the Gedo Office Quality Reporting Framework (WinForms) visualizing geometry tolerances, gauge deviations, and alignment accuracy.',
+				'Architected an automated PDF Plan Recognition System using OCR, extracting design metadata and cutting manual entry by 90%.',
+				'Collaborated directly with architects to define system boundaries, leading code reviews and driving modern architecture adoption.'
+			],
+			active: false
 		}
 	];
 

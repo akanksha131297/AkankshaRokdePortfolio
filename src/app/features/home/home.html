@@ -1,35 +1,122 @@
-<div class="hero-container" (mousemove)="onMouseMove($event)">
-  <div class="hero-center-content">
-      <div class="brief-description" *ngIf="showDescription">
-    👋 Hi, I'm Akanksha Rokde — a passionate software developer.
-  </div>
-    <div
-      class="bubbles-container"
-      [style.opacity]="bubblesVisible ? 1 : 0"
-      [style.pointerEvents]="bubblesVisible ? 'auto' : 'none'"
-    >
-      <!-- Bubbles -->
-      <a href="https://github.com/akanksha131297" target="_blank" rel="noopener noreferrer">
-        <div class="bubble github"><img src="assets/icons/github.svg" alt="GitHub" /></div>
-      </a>
-      <a href="https://www.linkedin.com/in/akanksharokde/" target="_blank" rel="noopener noreferrer">
-        <div class="bubble linkedin"><img src="assets/icons/linkedin.svg" alt="LinkedIn" /></div>
-      </a>
-      <a href="assets/Akanksha_Rokde_Resume.pdf" target="_blank" rel="noopener noreferrer">
-        <div class="bubble resume"><img src="assets/icons/download.svg" alt="Resume" /></div>
-      </a>
-      <a href="https://www.youtube.com/@TheCodeCurryTales" target="_blank" rel="noopener noreferrer">
-        <div class="bubble youtube"><img src="assets/icons/youtube.svg" alt="YouTube" /></div>
-      </a>
-      <a href="mailto:rokdeakanksha9@gmail.com" rel="noopener noreferrer">
-        <div class="bubble gmail"><img src="assets/icons/gmail.svg" alt="Gmail" /></div>
-      </a>
-     
+<div class="home-page" (mousemove)="onMouseMove($event)">
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="page-eyebrow">Railway engineering · Geospatial · Enterprise architecture</p>
+        <h1 class="hero-title">
+          Akanksha <span class="accent-word">Rokde</span>
+        </h1>
+        <p class="hero-role">Senior Full-Stack Engineer · Solution Architect track</p>
+        <p class="hero-tagline">
+          Senior full-stack engineer with <strong>7+ years</strong> building enterprise desktop and
+          web systems — from railway track geometry and compliance reporting at
+          <strong>Trimble</strong> to logistics and healthcare platforms. Transitioning toward
+          <strong>solution architecture</strong> with deep experience in
+          <strong>.NET</strong>, <strong>Angular</strong>, microservices, and
+          <strong>Azure AI</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a routerLink="/experience" class="btn-primary">View career journey</a>
+          <a href="assets/Akanksha_Rokde_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+            Download résumé
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">7+</span>
+            <span class="stat-label">Years in enterprise engineering</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">Railway</span>
+            <span class="stat-label">Geospatial track & quality reporting</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">AI-102</span>
+            <span class="stat-label">Azure AI · OCR automation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-frame glass-panel">
+          <ng-lottie [options]="lottieOptions" class="lottie-animation"></ng-lottie>
+          <div class="orbit-ring"></div>
+        </div>
+
+        <div
+          class="social-orbit"
+          [class.visible]="bubblesVisible"
+          [style.pointerEvents]="bubblesVisible ? 'auto' : 'none'"
+        >
+          <a href="https://github.com/akanksha131297" target="_blank" rel="noopener noreferrer" class="orbit-link" title="GitHub">
+            <img src="assets/icons/github.svg" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/akanksharokde/" target="_blank" rel="noopener noreferrer" class="orbit-link" title="LinkedIn">
+            <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+          <a href="assets/Akanksha_Rokde_Resume.pdf" target="_blank" rel="noopener noreferrer" class="orbit-link" title="Résumé">
+            <img src="assets/icons/download.svg" alt="Resume" />
+          </a>
+          <a href="https://www.youtube.com/@TheCodeCurryTales" target="_blank" rel="noopener noreferrer" class="orbit-link" title="YouTube">
+            <img src="assets/icons/youtube.svg" alt="YouTube" />
+          </a>
+          <a href="mailto:rokdeakanksha9@gmail.com" class="orbit-link" title="Email">
+            <img src="assets/icons/gmail.svg" alt="Gmail" />
+          </a>
+        </div>
+      </div>
     </div>
-        <ng-lottie [options]="lottieOptions" class="lottie-animation"></ng-lottie>
 
-  </div>
+    <div class="intro-chip" *ngIf="showDescription">
+      Move to reveal quick links — or scroll to explore my architecture focus.
+    </div>
+  </section>
 
- 
+  <section class="architecture-section">
+    <div class="section-header">
+      <p class="page-eyebrow">Solution architecture lens</p>
+      <h2 class="section-title">How I think about systems</h2>
+      <p class="section-lead">
+        I partner with architects on domain boundaries and integration rules while delivering
+        algorithms, reporting frameworks, and intelligent automation that hold up in regulated,
+        data-intensive environments.
+      </p>
+    </div>
+
+    <div class="pillar-grid">
+      <article class="pillar glass-panel">
+        <span class="pillar-index">01</span>
+        <h3>Cloud-native foundations</h3>
+        <p>Azure-centric patterns for scalability, security baselines, and cost-aware service selection.</p>
+      </article>
+      <article class="pillar glass-panel">
+        <span class="pillar-index">02</span>
+        <h3>Domain & integration</h3>
+        <p>System boundaries, microservices, and integration rules for geospatial and multi-module enterprise suites.</p>
+      </article>
+      <article class="pillar glass-panel">
+        <span class="pillar-index">03</span>
+        <h3>Reliable delivery</h3>
+        <p>CI/CD with Azure DevOps, Git workflows, and quality gates that keep releases predictable.</p>
+      </article>
+      <article class="pillar glass-panel">
+        <span class="pillar-index">04</span>
+        <h3>Intelligent solutions</h3>
+        <p>OCR plan recognition, Azure AI (AI-102), and optimized processing for geospatial and design metadata.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="domains-band glass-panel">
+    <h3>Domains I have shaped</h3>
+    <div class="domain-tags">
+      <span>Railway track geometry & re-stationing</span>
+      <span>Deutsche Bahn D1/D2 & Travel Chords</span>
+      <span>Logistics & supply chain</span>
+      <span>Healthcare enterprise</span>
+      <span>Quality reporting frameworks</span>
+    </div>
+  </section>
 </div>
-

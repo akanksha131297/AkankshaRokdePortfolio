@@ -1,62 +1,82 @@
-  <div class="contact-page">
-    <div class="girl-and-form">
-      <app-girlanimation class="girl-animation"></app-girlanimation>
-         <!-- Notification Bubbles -->
-            <a href="mailto:rokdeakanksha9@gmail.com" target="_blank" rel="noopener noreferrer" class="notification-bubble mail">
-              <img src="assets/icons/gmail.svg" alt="Mail" />
-            </a>
-            <a href="https://www.linkedin.com/in/akanksharokde/" target="_blank" rel="noopener noreferrer" class="notification-bubble linkedin">
-              <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
-            </a>
-      <div class="contact-container">
-        <h2 class="contact-title">I'd love to hear from you! 😊 </h2>
-        <p class="contact-subtitle">Whether it’s a project, feedback, or just a hello — drop me a message!📩</p>
+<div class="contact-page">
+  <header class="contact-header">
+    <p class="page-eyebrow">Collaboration</p>
+    <h2 class="section-title">Let's architect what's next</h2>
+    <p class="section-lead">
+      Open to architecture discussions, engineering leadership conversations, and roles where
+      strategy meets delivery.
+    </p>
+  </header>
 
-         <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="sendEmail()">
-              <input type="text" formControlName="name" placeholder="Your Name" />
-              <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="error">
-                Name is required (min 2 characters)
-              </div>
+  <div class="girl-and-form">
+    <app-girlanimation class="girl-animation"></app-girlanimation>
 
-              <input type="email" formControlName="email" placeholder="Your Email" />
-              <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error">
-                Valid email is required
-              </div>
+    <a href="mailto:rokdeakanksha9@gmail.com" class="notification-bubble mail" aria-label="Email">
+      <img src="assets/icons/gmail.svg" alt="Mail" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/akanksharokde/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="notification-bubble linkedin"
+      aria-label="LinkedIn"
+    >
+      <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
+    </a>
 
-              <textarea formControlName="message" rows="5" placeholder="Your Message"></textarea>
-              <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error">
-                Message should be at least 10 characters
-              </div>
+    <div class="contact-container glass-panel">
+      <h2 class="contact-title">Send a message</h2>
+      <p class="contact-subtitle">
+        Share a brief on your platform, team, or idea — I'll respond thoughtfully.
+      </p>
 
-              <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
-          </form>
+      <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+        <input type="text" formControlName="name" placeholder="Your name" />
+        <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="error">
+          Name is required (min 2 characters)
+        </div>
+
+        <input type="email" formControlName="email" placeholder="Your email" />
+        <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error">
+          Valid email is required
+        </div>
+
+        <textarea formControlName="message" rows="5" placeholder="Your message"></textarea>
+        <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error">
+          Message should be at least 10 characters
+        </div>
+
+        <button type="submit" [disabled]="contactForm.invalid">Send message</button>
+      </form>
 
       <div class="info-row">
-    <div class="info-block">
-      <div class="icon"><img src="assets/icons/location.svg" alt="Location" /></div>
-      <div class="info-title">Germany</div>
-    </div>
+        <div class="info-block">
+          <div class="icon"><img src="assets/icons/location.svg" alt="Location" /></div>
+          <div class="info-title">Germany</div>
+        </div>
 
-    <div class="info-block">
-      <a href="mailto:rokdeakanksha9@gmail.com" class="icon" aria-label="Email">
-      <div class="icon"><img src="assets/icons/message.svg" alt="Email" /></div>
-      </a>
-      <div class="info-title">Email</div>
-      
-    </div>
+        <div class="info-block">
+          <a href="mailto:rokdeakanksha9@gmail.com" class="icon" aria-label="Email">
+            <div class="icon"><img src="assets/icons/message.svg" alt="Email" /></div>
+          </a>
+          <div class="info-title">Email</div>
+        </div>
 
-    <div class="info-block">
-        <a href="https://www.linkedin.com/in/akanksharokde/" target="_blank"  rel="noopener noreferrer" class="icon" aria-label="LinkedIn">
-      <div class="icon"><img src="assets/icons/linkedin.svg" alt="LinkedIn" /></div>
-      </a>
-      <div class="info-title">LinkedIn</div>
-    </div>
-  </div>
-      <div class="copyright-block">
-        © 2025 Akanksha Rokde. All rights reserved.
+        <div class="info-block">
+          <a
+            href="https://www.linkedin.com/in/akanksharokde/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon"
+            aria-label="LinkedIn"
+          >
+            <div class="icon"><img src="assets/icons/linkedin.svg" alt="LinkedIn" /></div>
+          </a>
+          <div class="info-title">LinkedIn</div>
+        </div>
       </div>
-     </div>
+
+      <div class="copyright-block">© 2026 Akanksha Rokde. All rights reserved.</div>
+    </div>
   </div>
- </div>
-
-
+</div>

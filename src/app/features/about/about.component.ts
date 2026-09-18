@@ -21,7 +21,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 	intervalId: ReturnType<typeof setInterval> | null = null;
 	userClicked = false;
 	currentIndex = 0;
-	slideCount = 3;
+	slideCount = 4;
 	autoSlideInterval: number = 5000;
 	bubblesVisible = false;
 	private hideTimeout?: ReturnType<typeof setTimeout> | null;

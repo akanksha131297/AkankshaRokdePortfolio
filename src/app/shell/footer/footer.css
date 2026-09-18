@@ -1,61 +1,67 @@
 .mini-side-footer {
   position: fixed;
-  top: 40%;
+  top: 42%;
   left: 0;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  background: rgba(255, 255, 255, 0.1); /* subtle transparency */
-  padding: 0.5rem;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  gap: 0.65rem;
+  padding: 0.55rem;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  background: rgba(11, 15, 23, 0.82);
+  border: 1px solid var(--border-subtle);
+  border-left: none;
+  backdrop-filter: blur(12px);
   z-index: 999;
 }
 
 .footer-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
   border-radius: 50%;
-  transition: background-color 0.3s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
 
 .footer-icon:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background: var(--accent-soft);
+  border-color: rgba(201, 169, 98, 0.45);
+  transform: translateX(3px);
 }
 
 .footer-icon img {
-  width: 100%;
-  height: 100;
-  filter: none;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
-.footer-icon:hover img {
-  filter: brightness(1.2);
-}
- @media (max-width: 768px) {
+
+@media (max-width: 768px) {
   .mini-side-footer {
     position: fixed;
     bottom: 0;
     left: 0;
     top: auto;
     width: 100%;
-    transform: none; 
+    transform: none;
     flex-direction: row;
     justify-content: space-around;
-    padding: 0.5rem 1rem;
+    padding: 0.55rem 1rem;
     border-radius: 0;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
   }
 
   .footer-icon {
     width: 40px;
     height: 40px;
   }
+
+  .footer-icon:hover {
+    transform: translateY(-2px);
+  }
 }
-
-
