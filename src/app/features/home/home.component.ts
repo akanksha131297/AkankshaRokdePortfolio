@@ -23,7 +23,7 @@ export class HomeComponent {
 
 	constructor(private cdr: ChangeDetectorRef) {}
 
-	onMouseMove() {
+	onMouseMove(event: MouseEvent) {
 		this.bubblesVisible = true;
 		this.showDescription = true;
 
