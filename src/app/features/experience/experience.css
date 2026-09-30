@@ -1,180 +1,530 @@
-.experience-page {
-  padding: 2.5rem clamp(1rem, 3vw, 2rem) 4rem;
-  max-width: 1400px;
-  margin: 0 auto;
+
+/* ==========================================
+   EXPERIENCE PAGE
+========================================== */
+
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+  box-sizing: border-box;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.experience-page {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+
+  padding: 80px clamp(20px, 5vw, 75px);
+
+  overflow: hidden;
+  color: #e2e8f0;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
 
 .experience-header {
-  margin-bottom: 2.5rem;
-  padding: 0 0.5rem;
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 0 auto 65px;
+  text-align: center;
 }
+
+.page-eyebrow {
+  margin: 0 0 14px;
+
+  color: #d6b86a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0 0 20px;
+
+  color: #f1f5f9;
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.section-lead {
+  max-width: 780px;
+  margin: 0 auto;
+
+  color: #94a3b8;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.8;
+}
+
+/* ==========================================
+   STEPPER CONTAINER
+========================================== */
 
 .stepper-container {
-  padding: 0 0.5rem 1rem;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 0 auto;
+  padding: 15px 0 35px;
+
   overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+  scrollbar-color: #475569 transparent;
 }
 
-.stepper-wrapper {
-  display: flex;
-  justify-content: center;
-  overflow-x: auto;
-  padding-bottom: 1rem;
+.stepper-container::-webkit-scrollbar {
+  height: 7px;
 }
+
+.stepper-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.stepper-container::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+
+/* ==========================================
+   STEPPER WRAPPER
+========================================== */
+
+.stepper-wrapper {
+  width: max-content;
+  min-width: 100%;
+  padding: 0 15px;
+}
+
+/* ==========================================
+   HORIZONTAL TIMELINE
+========================================== */
 
 .stepper {
   display: flex;
   align-items: flex-start;
-  position: relative;
+
+  width: max-content;
+  min-width: 100%;
+
+  gap: 0;
 }
 
+/* ==========================================
+   INDIVIDUAL STEP
+========================================== */
+
 .step-item {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  min-width: 220px;
-  margin: 0 1rem;
+
+  flex: 0 0 295px;
+  width: 295px;
+  min-width: 0;
+
+  scroll-snap-align: center;
+  text-align: center;
 }
 
+/* ==========================================
+   STEP CIRCLE
+========================================== */
+
 .circle {
-  width: 52px;
-  height: 52px;
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+
+  margin-bottom: 14px;
+
+  border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 50%;
-  background: rgba(148, 163, 184, 0.2);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-  font-size: 1.1rem;
+
+  background: #1e293b;
+  color: #94a3b8;
+
+  font-size: 20px;
   font-weight: 700;
-  line-height: 52px;
-  text-align: center;
-  transition: background 0.4s ease, transform 0.4s ease, border-color 0.4s ease, color 0.4s ease;
-  z-index: 1;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
 }
 
 .circle.active {
-  background: linear-gradient(135deg, rgba(201, 169, 98, 0.35), rgba(91, 141, 239, 0.25));
-  border-color: rgba(201, 169, 98, 0.55);
-  color: var(--text-primary);
-  transform: scale(1.05);
+  border-color: rgba(214, 184, 106, 0.8);
+  background: #263448;
+  color: #f1f5f9;
+
+  box-shadow:
+    0 0 0 5px rgba(214, 184, 106, 0.06),
+    0 0 25px rgba(214, 184, 106, 0.12);
 }
+
+.active-glow .circle {
+  border-color: rgba(214, 184, 106, 0.8);
+}
+
+/* ==========================================
+   STEP LABEL
+========================================== */
 
 .label {
-  margin-top: 0.65rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 42px;
+
+  margin-bottom: 18px;
+  padding: 0 5px;
+
+  color: #e2e8f0;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
 }
 
-.description {
-  padding: 1rem;
-  margin-top: 1rem;
-  max-width: 520px;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  text-align: center;
-  animation: fadeIn 0.6s ease;
-}
+/* ==========================================
+   CONNECTOR
+========================================== */
 
 .step-connector {
-  height: 3px;
-  width: 90px;
-  margin-top: 26px;
-  background: transparent;
-  border-radius: 999px;
-  transition: background 0.6s ease-in-out;
+  position: relative;
+  flex: 0 0 70px;
+
+  height: 2px;
+  margin-top: 29px;
+
+  background: rgba(71, 85, 105, 0.55);
+
+  transition: background 0.3s ease;
 }
 
-.step-connector.visible {
-  background: linear-gradient(90deg, var(--accent), var(--brand));
+.step-connector::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  background: linear-gradient(
+    90deg,
+    #d6b86a,
+    #60a5fa
+  );
+
+  transition: transform 0.4s ease;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.step-connector.visible::after {
+  transform: scaleX(1);
 }
+
+/* ==========================================
+   EXPERIENCE CARD
+========================================== */
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  padding: 18px;
+
+  border: 1px solid rgba(148, 163, 184, 0.17);
+  border-radius: 18px;
+
+  background: rgba(20, 29, 47, 0.88);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  text-align: left;
+
+  overflow: visible;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.active-glow .description {
+  border-color: rgba(214, 184, 106, 0.35);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.2),
+    0 0 25px rgba(214, 184, 106, 0.06);
+}
+
+/* ==========================================
+   INFO BOXES
+========================================== */
 
 .info-boxes {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  gap: 9px;
+
+  width: 100%;
+  min-width: 0;
 }
 
 .info-box {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.45rem 0.85rem;
-  border-radius: 10px;
-  font-size: 0.84rem;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 38px;
+
+  padding: 9px 12px;
+
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 11px;
+
+  background: rgba(30, 41, 59, 0.65);
   color: #cbd5e1;
-  border: 1px solid var(--border-subtle);
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
+/* ==========================================
+   DETAIL CARD
+========================================== */
+
 .detail-card {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: 0.9rem 1rem;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  text-align: left;
-  max-width: 520px;
-  max-height: 340px;
-  overflow-y: auto;
-  word-wrap: break-word;
+  width: 100%;
+  min-width: 0;
+
+  padding: 15px 13px;
+
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 13px;
+
+  background: rgba(9, 15, 28, 0.65);
+
+  overflow: visible;
+}
+
+.detail-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding-left: 18px;
+
+  color: #a8b6ca;
+  font-size: 13.5px;
+  line-height: 1.65;
 }
 
 .detail-card li {
-  margin-bottom: 0.45rem;
+  min-width: 0;
+  padding-left: 2px;
+
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
-.step-item.active-glow .description {
-  border-color: rgba(201, 169, 98, 0.35);
-  box-shadow: 0 0 0 1px rgba(201, 169, 98, 0.12), 0 16px 40px rgba(0, 0, 0, 0.25);
+.detail-card li::marker {
+  color: #94a3b8;
 }
 
-@media (max-width: 768px) {
-  .stepper-wrapper {
-    flex-direction: column;
-    align-items: center;
-    overflow-x: visible;
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  .experience-page {
+    padding: 65px 30px;
   }
 
-  .stepper {
-    flex-direction: column;
-    align-items: center;
+  .experience-header {
+    margin-bottom: 45px;
   }
 
   .step-item {
-    min-width: auto;
-    width: 92%;
-    margin: 1rem 0;
-  }
-
-  .circle {
-    width: 42px;
-    height: 42px;
-    font-size: 1rem;
-    line-height: 42px;
-  }
-
-  .description {
-    max-width: 100%;
-  }
-
-  .detail-card {
-    max-height: 280px;
+    flex-basis: 280px;
+    width: 280px;
   }
 
   .step-connector {
-    width: 3px;
-    height: 36px;
-    margin: 0 auto;
+    flex-basis: 45px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .experience-page {
+    min-height: auto;
+    padding: 55px 18px;
+  }
+
+  .experience-header {
+    margin-bottom: 35px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    letter-spacing: -0.8px;
+  }
+
+  .section-lead {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .stepper-container {
+    padding: 10px 0 25px;
+  }
+
+  .stepper-wrapper {
+    padding: 0 8px;
+  }
+
+  .step-item {
+    flex-basis: 270px;
+    width: 270px;
+  }
+
+  .step-connector {
+    flex-basis: 35px;
+  }
+
+  .description {
+    padding: 15px;
+  }
+
+  .detail-card ul {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .experience-page {
+    padding: 45px 12px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .step-item {
+    flex-basis: 255px;
+    width: 255px;
+  }
+
+  .step-connector {
+    flex-basis: 25px;
+  }
+
+  .circle {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+  }
+
+  .step-connector {
+    margin-top: 25px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  .description {
+    padding: 13px;
+  }
+
+  .info-box {
+    font-size: 12px;
+  }
+
+  .detail-card ul {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
